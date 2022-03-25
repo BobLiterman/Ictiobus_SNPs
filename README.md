@@ -449,3 +449,35 @@ In addition to mapping read data against the nuclear composite genome, we also m
 
 #### Generating Phylogenies from SISRS SNP Data  
 
+In order to better understand the relationships among *Ictibous* species, we inferred phylogenetic trees using SISRS SNP data using [iqTree](http://www.iqtree.org/). From an alignment of all samples, SISRS automatically extracts and concatenates parsimony-informative sites, and we inferred trees from all PI sites where >= 50% of the samples had a fixed base call. 
+
+![Phylogenetic Trees of Ictiobus Species from Mitochondrial, UCE, and WGS Data](images/Fig_1.png "Phylogenetic Trees of Ictiobus Species from Mitochondrial, UCE, and WGS Data")
+
+#### Generating Species-Informative SNPs from SISRS Data  
+
+The first step for generating species-informative SNPs is to select reference samples. For this manuscript we selected reference samples based on pairwise comparisons of SISRS SNP data. Briefly, the sequence data for each sample was compared to all other samples, and we selected 4 specimens per species based on (1) the samples having a high number of covered bases and (2) the samples having a large pairwise distance between themselves and specimens from other species. 
+
+![Pairwise Distances for WGS Data](images/Fig_S1.png "Pairwise Distances for WGS Data")
+
+**Note**: Two samples labeled as *I. niger* based on morphological species ID appeared to have much higher genomic similarity to *I. bubalus*. These samples also clustered with *I. bubualus* samples in each phylogenetic reconstruction.  
+
+These reference samples were pooled together by location, resulting in two sets of reference data per species (e.g. Missouri & Louisiana). To identify species-informative SNPs, we isolated sites where (1) alleles were fixed in all 8 subsets, (2) alleles were identical within species, between locations, and (3) alleles were present in one species but not present in either of the other two. 
+
+**SNP Results (Round 1)**  
+*I. bubalus*: 44,711 SNPs  
+*I. cyprinellus*: 37,053 SNPs  
+*I. niger*: 39,373 SNPs  
+
+#### Identifying specimens based on SISRS SNPs  
+
+After generating SNPs from the first set of reference sequences, we queried those sites in all other WGS and UCE samples. We assessed alleles at any site that had homozygous or biallelic coverage in the sample, and scored each sample based on the proportion of species-specific SNPs that carried the species-specific allele. After this first round of identification, we pooled all *Ictiobus* WGS samples that appeared to have a typical allelic composition to create the final set of SNPs just as before.
+
+**SNP Results (Round 2)**  
+*I. bubalus*: 50,381 SNPs  
+*I. cyprinellus*: 41,918 SNPs  
+*I. niger*: 46,287 SNPs  
+
+![SNP-based identification of Ictiobus Samples Using SISRS SNPs](images/Fig_2.png "SNP-based identification of Ictiobus Samples Using SISRS SNPs")
+
+**Note**: Samples not included in the second round of reference samples were ID'd twice using both SNP sets. Results from Classification Round 1 are faded relative to those from Classification Round 2. 
+
